@@ -87,7 +87,7 @@ npm run build   # tsc + vite build → dist/
 
 Deployed to GitHub Pages automatically on push to `main` via `.github/workflows/deploy.yml`.
 
-Production URL: `https://leinss.github.io/circles-invitations-miniapp/`
+Production URL: `https://leinss.xyz/circles-invitations-miniapp/`
 
 ## Tech Stack
 
@@ -120,4 +120,4 @@ src/
 The following origins must be in `PASSKEY_ORIGIN` for both the invitations backend and auth-service:
 
 - `https://circles.gnosis.io` (host)
-- `https://leinss.github.io` (miniapp on GitHub Pages)
+- `https://leinss.xyz` (miniapp on GitHub Pages)
