@@ -13,6 +13,7 @@
     "viem": "^2.21.54"
   },
   "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.1.4",
     "typescript": "^5.7.0",
     "vite": "^6.4.1"
   }
