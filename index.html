@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circles Invitations</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app" class="card">
+    <h2>Circles Invitations</h2>
+    <p class="subtitle">Create and manage invitation referral links</p>
+
+    <div id="status" class="status disconnected">
+      Waiting for wallet connection...
+    </div>
+
+    <div id="auth-status" class="status disconnected" style="display:none">
+      Authenticating...
+    </div>
+
+    <nav id="tabs" class="tabs" style="display:none">
+      <button class="tab active" data-tab="referrals">My Referrals</button>
+      <button class="tab" data-tab="create">Create</button>
+      <button class="tab" data-tab="sessions">Sessions</button>
+    </nav>
+
+    <div id="view-container"></div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

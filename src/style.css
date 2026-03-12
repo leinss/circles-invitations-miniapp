@@ -1,0 +1,498 @@
+/* Circles Invitations Miniapp — based on miniappDemo style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #faf5f1;
+  color: #060a40;
+  padding: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #ede1d8;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #060a40;
+  margin-bottom: 4px;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #060a40;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #9b9db3;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.mono {
+  font-family: 'SF Mono', ui-monospace, monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+/* Status bar */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  border: 1px solid;
+}
+
+.status.disconnected {
+  background: #fff8eb;
+  border-color: #feebc7;
+  color: #b54708;
+}
+
+.status.connected {
+  background: #f0fdf3;
+  border-color: #bbf7ca;
+  color: #158030;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  background: #f3ede8;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6a6c8c;
+  cursor: pointer;
+  transition: all 0.15s;
+  width: auto;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #060a40;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.tab:hover:not(.active) {
+  color: #060a40;
+}
+
+/* Form fields */
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6a6c8c;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ede1d8;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  color: #060a40;
+  background: #faf5f1;
+  transition: border-color 0.15s;
+}
+
+.field textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: 'SF Mono', ui-monospace, monospace;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #9b9db3;
+}
+
+.field input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 12px 16px;
+  background: #060a40;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-sm {
+  width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: #f3ede8;
+  color: #060a40;
+}
+
+.btn-sm:hover:not(:disabled) {
+  background: #ede1d8;
+  opacity: 1;
+}
+
+.btn-danger {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #fecaca;
+  opacity: 1;
+}
+
+/* Results */
+.result {
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  word-break: break-all;
+  border: 1px solid;
+  display: none;
+  line-height: 1.5;
+}
+
+.result.show {
+  display: block;
+}
+
+.result.success {
+  background: #f0fdf3;
+  border-color: #bbf7ca;
+  color: #158030;
+}
+
+.result.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.result.pending {
+  background: #faf5f1;
+  border-color: #ede1d8;
+  color: #6a6c8c;
+}
+
+/* View header */
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Loading / empty states */
+.loading {
+  text-align: center;
+  padding: 16px;
+  color: #9b9db3;
+  font-size: 13px;
+}
+
+.empty {
+  text-align: center;
+  padding: 24px 16px;
+  color: #9b9db3;
+  font-size: 13px;
+}
+
+/* Referral rows */
+.referrals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.referral-row {
+  padding: 12px;
+  border: 1px solid #ede1d8;
+  border-radius: 10px;
+  background: #faf5f1;
+}
+
+.referral-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.referral-date {
+  font-size: 12px;
+  color: #9b9db3;
+}
+
+.referral-account {
+  font-size: 12px;
+  color: #6a6c8c;
+  margin-bottom: 6px;
+}
+
+.referral-account .label {
+  font-weight: 500;
+}
+
+.referral-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.referral-key {
+  flex: 1;
+  font-size: 11px !important;
+  padding: 6px 8px !important;
+}
+
+/* Cost display */
+.cost-display {
+  padding: 10px 14px;
+  background: #faf5f1;
+  border: 1px solid #ede1d8;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+/* Invitation results */
+.invitation-result {
+  padding: 12px;
+  border: 1px solid #ede1d8;
+  border-radius: 10px;
+  background: #faf5f1;
+  margin-top: 10px;
+}
+
+.result-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #060a40;
+  margin-bottom: 8px;
+}
+
+.result-field {
+  margin-bottom: 6px;
+}
+
+.result-field .label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6a6c8c;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.copy-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.copy-row input {
+  flex: 1;
+  font-size: 11px;
+  padding: 6px 8px;
+  border: 1px solid #ede1d8;
+  border-radius: 6px;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  background: #ffffff;
+  color: #060a40;
+}
+
+.result-field a {
+  color: #1e40af;
+  text-decoration: none;
+}
+
+.result-field a:hover {
+  text-decoration: underline;
+}
+
+/* Session cards */
+.session-card {
+  padding: 14px;
+  border: 1px solid #ede1d8;
+  border-radius: 10px;
+  background: #faf5f1;
+  margin-bottom: 10px;
+}
+
+.session-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.session-slug {
+  display: block;
+  font-size: 11px;
+  color: #9b9db3;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.badge.active {
+  background: #f0fdf3;
+  color: #158030;
+}
+
+.badge.paused {
+  background: #fff8eb;
+  color: #b54708;
+}
+
+.session-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: #6a6c8c;
+  margin-bottom: 8px;
+}
+
+.session-url {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.session-url input {
+  flex: 1;
+  font-size: 11px;
+  padding: 6px 8px;
+  border: 1px solid #ede1d8;
+  border-radius: 6px;
+  font-family: 'SF Mono', ui-monospace, monospace;
+  background: #ffffff;
+  color: #060a40;
+}
+
+.session-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* Form actions */
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.form-actions button:first-child {
+  flex: 1;
+}
+
+.form-actions .btn-sm {
+  flex: none;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 420px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .card {
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .session-stats {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
